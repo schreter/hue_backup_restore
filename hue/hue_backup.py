@@ -41,7 +41,7 @@ class HueBackup():
             self.__current["scenes"][guid]["lightstates"] = data["lightstates"]
             
         print("Backing up Hue bridge data to " + filename)
-        with open(filename, "wb") as f:
+        with open(filename, "w") as f:
             json.dump(self.__current, f, indent=4)
 
     def __fixNames(self, resource, tree):
